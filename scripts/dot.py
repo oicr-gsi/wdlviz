@@ -13,14 +13,16 @@ def main(args=None):
         description="Render a dot file using graphviz"
     )
     parser.add_argument(
-        "dot", metavar="FILE", help="DOT file (- for standard input)"
+        "dot", 
+        metavar="FILE",
+        help="DOT file (- for standard input)"
     )
 
     parser.add_argument(
         "format",
         metavar="FORMAT",
         type=str,
-        help="Format for output, either 'png', 'pdf', 'jpg' or 'svg'.",
+        help="Format for output",
     )
     args = parser.parse_args(args if args is not None else sys.argv[1:])
 
@@ -29,7 +31,6 @@ def main(args=None):
 
     # visualize workflow
     graphviz.render('dot', args.format, dot).replace('\\', '/')
-
 
 if __name__ == "__main__":
     main()
