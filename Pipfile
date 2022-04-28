@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 graphviz = "==0.20"
 miniwdl = "==1.5.1"
+pipenv = "*"
 
 [dev-packages]
 
