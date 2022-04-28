@@ -48,9 +48,9 @@ def main(args=None):
     assert doc.workflow, "No workflow in WDL document"
 
     # visualize workflow
-    doc = wdlviz(doc.workflow, args.inputs, args.outputs)
-    print(doc.source)
-    doc.render(doc.workflow.name + ".dot", view=True, format='png')
+    dot = wdlviz(doc.workflow, args.inputs, args.outputs)
+    print(dot.source)
+    dot.render(doc.workflow.name + ".dot", view=True, format='png')
 
 
 def wdlviz(workflow: WDL.Workflow, inputs=False, outputs=False):
